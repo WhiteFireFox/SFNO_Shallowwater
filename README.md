@@ -34,8 +34,9 @@ $$
 
 where $\mathcal{F}$ refers to the Spherical Harmonic Transform (SHT). By replacing the filter weights $\mathcal{F}[\kappa](l, 0)$ with the learned weights $\kappa_\vartheta(l)$, we obtain the Spherical Fourier Neural Layer
 
+
 $$
-\mathcal{K}_{\vartheta}[u] = \mathcal{F}^{-1}[\tilde{\kappa}_{\vartheta} \cdot \mathcal{F}[u]],
+\mathcal{K}_{\vartheta}[u] 
 $$
 
 The above theory is implemented in the **SphericalConv** class. Using $\mathcal{F}$ and $\mathcal{F}^{-1}$ involves **RealSHT** and **InverseRealSHT** modules from **torch-harmonics**. We initialize parameter $\vartheta$ with **nn.Parameter** and use **torch.einsum** for $\tilde{\kappa}_{\vartheta} \cdot \mathcal{F}[u]$. It is worth mentioning that the code implemented in the **torch-harmonics** library is resolution-dependent because it initializes **RealSHT** and **InverseRealSHT** during setup. These Fourier operators lack learnable weights and must adjust to the resolution during forward propagation. Thus, we combined methods from the **neuraloperator** library to optimize the process and make it resolution-independent. However, the **neuraloperator** library has its limitations, and we will discuss it below.
