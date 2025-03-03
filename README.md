@@ -32,7 +32,7 @@ $$
 \mathcal{F}[\kappa \star u](l, m) = 2\pi \sqrt{\frac{4\pi}{2l + 1}} \, \mathcal{F}[u](l, m) \cdot \mathcal{F}[\kappa](l, 0),
 $$
 
-where $\mathcal{F}$ refers to the Spherical Harmonic Transform (SHT). By replacing the filter weights $\mathcal{F}[\kappa](l, 0)$ with the learned weights $\kappa_\vartheta(l)$, we obtain the Spherical Fourier Neural Layer
+where $\mathcal{F}$ refers to the Spherical Harmonic Transform (SHT). By replacing the filter weights $\mathcal{F}[\kappa](l, 0)$ with the learned weights $\kappa_\vartheta(l)$, we obtain the Spherical Fourier Neural Layer $\mathcal{K}_{\vartheta}[u]$ as follows
 
 
 $$
