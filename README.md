@@ -1,7 +1,7 @@
 # Modeling Water Flow on the Sphere with FNO
 
 ## Introduction
-The shallow water equations (SWE) on a rotating sphere is a system of hyperbolic partial differential equations represented by a $N$-dimensional vector $ u(x, t): S^2 \times [0, T) \rightarrow R^N$. The system is observed at discrete times $t_n \in \{t_0,t_1,\cdots\}$ and positions $x_i \in \{x_0,x_1,\cdots,x_N\}$, assuming that there exists a deterministic mapping
+The shallow water equations (SWE) on a rotating sphere is a system of hyperbolic partial differential equations represented by a $N$-dimensional vector $u(x, t): S^2 \times [0, T) \rightarrow R^N$. The system is observed at discrete times $t_n \in \{t_0,t_1,\cdots\}$ and positions $x_i \in \{x_0,x_1,\cdots,x_N\}$, assuming that there exists a deterministic mapping
 
 $$
 u_{n+1} = F[u_{n}, t_n]
