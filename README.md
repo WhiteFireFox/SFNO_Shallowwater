@@ -75,7 +75,7 @@ We conduct two comparative experiments. In the first experiment, we train five m
 </div>
 
 <div align="center">
-<img src="./script/figure_1.png" alt="Figure 1" style="display:block; margin:0 auto;  width:80%;">
+<img src="./script/figure_1.png" alt="Figure 1" style="display:block; margin:0 auto;  width:70%;">
 </div>
 
 In the first experiment, as shown in Table 1, our implemented SFNO outperforms the baseline and produces results similar to the SFNO effect of the **torch-harmonecs** library. Figure 1 illustrates that SFNO clearly surpasses FNO, because FNO shows **artifacts** in its predictions. However, the SFNO effect from the **neuraloperator** library is subpar, likely due to poor implementation of position embedding and other factors. Additionally, the **torch-harmonecs** library fails to achieve grid-invariance. It is worth mentioning that the parameters we count are learnable parameters, and adding a nonlinear layer in the frequency domain will not bring about changes in the learnable parameters.
@@ -86,7 +86,7 @@ In the first experiment, as shown in Table 1, our implemented SFNO outperforms t
 </div>
 
 <div align="center">
-<img src="./script/figure_2.png" alt="Figure 2" style="display:block; margin:0 auto;  width:80%;">
+<img src="./script/figure_2.png" alt="Figure 2" style="display:block; margin:0 auto;  width:70%;">
 </div>
 
 In the second experiment, we decide not to compare the SFNO effect of the **neuraloperator** library, as it had shown suboptimal performance in the first experiment and space is limited. Table 2 demonstrates that the SFNO predictions from both our implementation and the **torch-harmonecs** library are better than FNO. Additionally, adding nonlinear layers in the frequency domain did not alter the learnable parameters. In addition, neuraloperator library does not fully support rescaling, making its parameter count very large. As illustrated in Figure 2, we observe artifacts at the boundaries predicted by FNO, whereas SFNO provides superior predictions. Furthermore, Figure 3 shows that SFNO achieves a lower loss value than FNO upon training convergence. The test results, including mean and standard deviation, confirm that SFNO outperforms FNO in SWE prediction. The data in the Table 2 shows the worst prediction, best prediction and average situation during prediction.
